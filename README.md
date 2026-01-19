@@ -208,36 +208,15 @@ Salário, Freelance, Investimentos, Outros
 
 ---
 
-## 5. ROADMAP - FUNCIONALIDADES FUTURAS
 
-### 5.1 Fase 2 (Próximas Iterações)
-| Funcionalidade | Prioridade | Descrição |
-|----------------|------------|-----------|
-| Onboarding guiado | Alta | Tutorial inicial perguntando nome e primeira meta |
-| Gráficos de gastos | Alta | Pizza por categoria, linha de evolução mensal |
-| Editar/excluir metas | Alta | CRUD completo na página de metas |
-| Transações recorrentes | Média | Agendar despesas fixas (aluguel, assinaturas) |
-| Lembretes diários | Média | Notificações para registrar gastos |
+## 5. REQUISITOS NÃO-FUNCIONAIS
 
-### 5.2 Fase 3 (Melhorias)
-| Funcionalidade | Prioridade | Descrição |
-|----------------|------------|-----------|
-| IA para classificação | Média | Usar Lovable AI para categorizar automaticamente |
-| Relatórios mensais | Média | Resumo automático do mês com insights |
-| Exportar dados | Baixa | Download de transações em CSV/PDF |
-| Metas compartilhadas | Baixa | Metas em conjunto com parceiro/família |
-| Gamificação | Baixa | Badges e conquistas por comportamento |
-
----
-
-## 6. REQUISITOS NÃO-FUNCIONAIS
-
-### 6.1 Performance
+### 5.1 Performance
 - Tempo de resposta do chat: < 2 segundos
 - Carregamento inicial: < 3 segundos
 - Funcionamento offline: Não suportado (requer conexão)
 
-### 6.2 Acessibilidade (WCAG 2.2 AA)
+### 5.2 Acessibilidade (WCAG 2.2 AA)
 - Contraste mínimo texto/fundo: 4.5:1
 - Touch targets: mínimo 44x44px
 - Fonte base: 16px
@@ -245,22 +224,22 @@ Salário, Freelance, Investimentos, Outros
 - Navegação por teclado
 - Labels em elementos interativos
 
-### 6.3 Segurança
+### 5.3 Segurança
 - Autenticação obrigatória para acesso
 - RLS em todas as tabelas (usuário só vê seus dados)
 - LGPD: Não coleta dados bancários ou CPF
 - Criptografia em trânsito (HTTPS)
 
-### 6.4 Compatibilidade
+### 5.4 Compatibilidade
 - Mobile-first (design responsivo)
 - Browsers: Chrome, Safari, Firefox, Edge (últimas 2 versões)
-- PWA: Não implementado (futuro)
+- PWA: Não implementado
 
 ---
 
-## 7. MÉTRICAS DE SUCESSO
+## 6. MÉTRICAS DE SUCESSO
 
-### 7.1 Produto
+### 6.1 Produto
 | Métrica | Meta |
 |---------|------|
 | Taxa de ativação (1+ transação em 7 dias) | ≥ 40% |
@@ -268,7 +247,7 @@ Salário, Freelance, Investimentos, Outros
 | Retenção D7 | ≥ 25% |
 | Retenção D30 | ≥ 15% |
 
-### 7.2 Experiência
+### 6.2 Experiência
 | Métrica | Meta |
 |---------|------|
 | NPS (early adopters) | > 30 |
@@ -277,9 +256,9 @@ Salário, Freelance, Investimentos, Outros
 
 ---
 
-## 8. CONSIDERAÇÕES FINAIS
+## 7. CONSIDERAÇÕES FINAIS
 
-### 8.1 O que o MVP faz bem
+### 7.1 O que o MVP faz bem
 - Interface conversacional funcional
 - Registro rápido de transações por texto
 - Depósitos em metas via chat
@@ -288,22 +267,169 @@ Salário, Freelance, Investimentos, Outros
 - Tom de voz consistente e amigável
 - Categorização automática básica
 
-### 8.2 Limitações conhecidas
+### 7.2 Limitações conhecidas
 - Parser de linguagem natural usa regex (não IA)
 - Não há edição/exclusão de metas pela interface visual
 - Onboarding não implementado
 - Sem gráficos ou visualizações avançadas
 - Sem notificações/lembretes
-- Nome do usuário extraído do email (não personalizado)
+
+---
+**Versão:** 2.0  
+**Última atualização:** 19/01/2026  
+
+````
+
+
+### Interações de Vibe Coding:
+
+> Criar o App no Lovable com o PRD do Github Copilot: (PRD)
+> Refinamento de funções e outras correções no Lovable
+> Criação de Brand Book com o Github Copilot para guiar melhor a identidade do App no Lovable
+> Criação de ICP no Github Copilot 
+> Ajustar identidade de marca com o Lovable: (Brand Book) (ICP)
+> Ajustes finais para corrigir funcionalidades
+
+### Resultado Final no Lovable: https://chat-fala-grana.lovable.app/
+
+<img width="1268" height="832" alt="image" src="https://github.com/user-attachments/assets/04e7afbd-64ac-409d-b945-305468c7d860" />
+
+## Resumo do Site:
+
+**Fala Grana** é um aplicativo de gestão financeira pessoal com interface conversacional que torna o controle de gastos tão natural quanto uma conversa no WhatsApp.
+
+**Tagline:** "Fala Grana — Suas finanças, só conversando"
 
 ---
 
-**Versão:** 2.0  
-**Última atualização:** 14/01/2026  
-**Próxima revisão:** Após implementação da Fase 2
+## Funcionalidades Principais
 
-````
-### Brand Book refinado com Github Copilot:
+### 1. Interface Conversacional (Chat)
+- **Registro de transações por linguagem natural**
+  - Exemplo: "Gastei R$ 50 no mercado" é interpretado automaticamente
+  - Palavras-chave reconhecidas: gastei, paguei, comprei, recebi, salário, etc.
+- **Categorização automática** baseada em contexto
+- **Depósitos em metas via chat**
+  - Exemplo: "Depositei R$ 100 na meta viagem"
+- **Criação de metas conversando**
+  - Se a meta não existe, o sistema abre diálogo para criar
+- **Confirmação antes de salvar** qualquer operação
+- **Personalização com nome** do usuário em saudações
+
+### 2. Dashboard (Tela Inicial)
+- **Saudação personalizada** ("E aí, [Nome]!")
+- **Card de saldo total** em destaque
+  - Resumo de receitas totais
+  - Resumo de despesas totais
+  - Cálculo automático do saldo (receitas - despesas)
+- **Gráfico de gastos por categoria** (pizza)
+  - Distribuição percentual visual
+  - Legenda com cores por categoria
+- **Gráfico de evolução do saldo** (linha temporal)
+- **Ações rápidas**
+  - Adicionar nova transação
+  - Criar nova meta
+- **Últimas 5 transações** listadas
+- **Cards de metas financeiras** com progresso visual
+- **Dica educacional** fixa
+
+### 3. Gerenciamento de Transações
+- **Histórico completo** ordenado por data (mais recente primeiro)
+- **Filtros por tipo**
+  - Todas as transações
+  - Apenas receitas
+  - Apenas despesas
+- **Busca por texto** na descrição
+- **Cards com totais** de receita e despesa do período
+- **Exibição detalhada** de cada transação
+  - Ícone da categoria
+  - Nome da categoria
+  - Valor formatado
+  - Data
+
+### 4. Metas Financeiras
+- **Criação de metas** com: 
+  - Título personalizado
+  - Valor alvo
+  - Prazo (opcional)
+  - Ícone (emoji)
+  - Cor do card
+- **Visualização de progresso**
+  - Barra de progresso visual (percentual)
+  - Valor atual vs.  valor alvo
+  - Valor restante para atingir
+  - Dias restantes até o prazo
+  - Sugestão de depósito mensal calculada automaticamente
+- **Depósitos**
+  - Via chat conversacional
+  - Atualização automática do progresso
+
+### 5. Categorias Personalizáveis
+- **CRUD completo** (criar, editar, excluir)
+- **Categorias separadas** para receitas e despesas
+- **Seleção de ícone** (emoji) para cada categoria
+- **Categorias padrão pré-configuradas:**
+  - **Despesas:** Alimentação, Transporte, Moradia, Saúde, Lazer, Compras, Educação, Contas, Investimentos, Outros
+  - **Receitas:** Salário, Freelance, Investimentos, Outros
+
+### 6. Perfil e Configurações
+- **Informações do usuário**
+  - Exibição de nome
+  - Exibição de email
+- **Seletor de tema** (Claro, Escuro, Sistema)
+- **Menu de configurações**
+  - Gerenciar categorias
+  - Notificações (planejado)
+  - Privacidade
+  - Exportar dados (planejado)
+  - Ajuda e suporte
+- **Logout** com redirecionamento
+
+### 7. Autenticação e Segurança
+- **Cadastro** com email e senha
+- **Login** com persistência de sessão
+- **Auto-confirmação de email** habilitada
+- **Rotas protegidas** para usuários autenticados
+- **Row-Level Security (RLS)** - cada usuário vê apenas seus dados
+- **Conformidade LGPD**
+  - Não coleta dados bancários
+  - Não requer CPF
+  - Criptografia em trânsito (HTTPS)
+
+---
+
+## Navegação
+
+A interface possui **5 abas principais** no menu inferior:
+
+1. **Início** - Dashboard com saldo, gráficos e resumo
+2. **Chat** - Interface conversacional para registrar transações e metas
+3. **Transações** - Histórico completo com filtros e busca
+4. **Metas** - Gerenciamento de objetivos financeiros
+5. **Perfil** - Configurações e personalização
+
+---
+
+## Diferenciais
+
+- **Controle em 30 segundos/dia** via chat
+- **Sem conexão bancária** necessária (privacidade total)
+- **Categorização automática** inteligente
+- **Tom de voz amigável** e brasileiro (sem julgamentos)
+
+
+## Reflexão
+
+ ### O que funcionou bem?  
+ Conhecer os tipos de documentação que podem ajudar a montar um bom projeto como o PRD e o ICP foram ótimos pontos iniciais que refinei no Github Copilot. O Lovable foi uma ótima ferramenta para vibe coding e que realmente fez tudo majoritalmente como imaginei e com ótimos resultados
+ 
+ ### O que não funcionou como o esperado? 
+ Gostaria de poder interagir por mais tempo com o Lovable no dia a dia, além disso o lovable teve dificuldade em criar a IA de início no site que desenhei e em outros momentos senti que os créditos diários acabaram muito rapidamente
+ 
+ ### O que aprendeu sobre conversar com IAs?
+ É possível e já viável realizar vibe coding de forma funcional e que gere bons produtos. É realmente um novo capítulo para a TI e o desenvolvimento de software
+
+ ### Brand Book refinado com Github Copilot:
 
 ````markdown
 # Fala Grana — Brand Book
@@ -676,8 +802,8 @@ Antes de lançar qualquer material, verificar:
 ---
 
 **Versão:** 1.0 — Atualizado em 08/01/2026  
-**Próxima revisão:** Após beta público (Mês 4)
 ````
+
 ### ICP (Ideal Costumer Profile) refinado com Github Copilot:
 ````markdown
 # Fala Grana — ICP (Ideal Customer Profile)
@@ -999,153 +1125,4 @@ Se menor que 3 "Sim" — Não é fit (não investir recursos)
 ---
 
 **Versão:** 1.0 — Atualizado em 08/01/2026  
-**Revisão:** Trimestral após lançamento beta
 ````
-
-### Interações de Vibe Coding:
-
-> Criar o App no Lovable com o PRD do Github Copilot: (PRD)
-> Refinamento de funções e outras correções no Lovable
-> Criação de Brand Book com o Github Copilot para guiar melhor a identidade do App no Lovable
-> Criação de ICP no Github Copilot 
-> Ajustar identidade de marca com o Lovable: (Brand Book) (ICP)
-> Ajustes finais para corrigir funcionalidades
-
-### Resultado Final no Lovable: https://chat-fala-grana.lovable.app/
-
-<img width="1268" height="832" alt="image" src="https://github.com/user-attachments/assets/04e7afbd-64ac-409d-b945-305468c7d860" />
-
-## Resumo do Site:
-
-**Fala Grana** é um aplicativo de gestão financeira pessoal com interface conversacional que torna o controle de gastos tão natural quanto uma conversa no WhatsApp.
-
-**Tagline:** "Fala Grana — Suas finanças, só conversando"
-
----
-
-## Funcionalidades Principais
-
-### 1. Interface Conversacional (Chat)
-- **Registro de transações por linguagem natural**
-  - Exemplo: "Gastei R$ 50 no mercado" é interpretado automaticamente
-  - Palavras-chave reconhecidas: gastei, paguei, comprei, recebi, salário, etc.
-- **Categorização automática** baseada em contexto
-- **Depósitos em metas via chat**
-  - Exemplo: "Depositei R$ 100 na meta viagem"
-- **Criação de metas conversando**
-  - Se a meta não existe, o sistema abre diálogo para criar
-- **Confirmação antes de salvar** qualquer operação
-- **Personalização com nome** do usuário em saudações
-
-### 2. Dashboard (Tela Inicial)
-- **Saudação personalizada** ("E aí, [Nome]!")
-- **Card de saldo total** em destaque
-  - Resumo de receitas totais
-  - Resumo de despesas totais
-  - Cálculo automático do saldo (receitas - despesas)
-- **Gráfico de gastos por categoria** (pizza)
-  - Distribuição percentual visual
-  - Legenda com cores por categoria
-- **Gráfico de evolução do saldo** (linha temporal)
-- **Ações rápidas**
-  - Adicionar nova transação
-  - Criar nova meta
-- **Últimas 5 transações** listadas
-- **Cards de metas financeiras** com progresso visual
-- **Dica educacional** fixa
-
-### 3. Gerenciamento de Transações
-- **Histórico completo** ordenado por data (mais recente primeiro)
-- **Filtros por tipo**
-  - Todas as transações
-  - Apenas receitas
-  - Apenas despesas
-- **Busca por texto** na descrição
-- **Cards com totais** de receita e despesa do período
-- **Exibição detalhada** de cada transação
-  - Ícone da categoria
-  - Nome da categoria
-  - Valor formatado
-  - Data
-
-### 4. Metas Financeiras
-- **Criação de metas** com: 
-  - Título personalizado
-  - Valor alvo
-  - Prazo (opcional)
-  - Ícone (emoji)
-  - Cor do card
-- **Visualização de progresso**
-  - Barra de progresso visual (percentual)
-  - Valor atual vs.  valor alvo
-  - Valor restante para atingir
-  - Dias restantes até o prazo
-  - Sugestão de depósito mensal calculada automaticamente
-- **Depósitos**
-  - Via chat conversacional
-  - Atualização automática do progresso
-
-### 5. Categorias Personalizáveis
-- **CRUD completo** (criar, editar, excluir)
-- **Categorias separadas** para receitas e despesas
-- **Seleção de ícone** (emoji) para cada categoria
-- **Categorias padrão pré-configuradas:**
-  - **Despesas:** Alimentação, Transporte, Moradia, Saúde, Lazer, Compras, Educação, Contas, Investimentos, Outros
-  - **Receitas:** Salário, Freelance, Investimentos, Outros
-
-### 6. Perfil e Configurações
-- **Informações do usuário**
-  - Exibição de nome
-  - Exibição de email
-- **Seletor de tema** (Claro, Escuro, Sistema)
-- **Menu de configurações**
-  - Gerenciar categorias
-  - Notificações (planejado)
-  - Privacidade
-  - Exportar dados (planejado)
-  - Ajuda e suporte
-- **Logout** com redirecionamento
-
-### 7. Autenticação e Segurança
-- **Cadastro** com email e senha
-- **Login** com persistência de sessão
-- **Auto-confirmação de email** habilitada
-- **Rotas protegidas** para usuários autenticados
-- **Row-Level Security (RLS)** - cada usuário vê apenas seus dados
-- **Conformidade LGPD**
-  - Não coleta dados bancários
-  - Não requer CPF
-  - Criptografia em trânsito (HTTPS)
-
----
-
-## Navegação
-
-A interface possui **5 abas principais** no menu inferior:
-
-1. **Início** - Dashboard com saldo, gráficos e resumo
-2. **Chat** - Interface conversacional para registrar transações e metas
-3. **Transações** - Histórico completo com filtros e busca
-4. **Metas** - Gerenciamento de objetivos financeiros
-5. **Perfil** - Configurações e personalização
-
----
-
-## Diferenciais
-
-- **Controle em 30 segundos/dia** via chat
-- **Sem conexão bancária** necessária (privacidade total)
-- **Categorização automática** inteligente
-- **Tom de voz amigável** e brasileiro (sem julgamentos)
-
-
-## Reflexão
-
- ### O que funcionou bem?  
- Conhecer os tipos de documentação que podem ajudar a montar um bom projeto como o PRD e o ICP foram ótimos pontos iniciais que refinei no Github Copilot. O Lovable foi uma ótima ferramenta para vibe coding e que realmente fez tudo majoritalmente como imaginei e com ótimos resultados
- 
- ### O que não funcionou como o esperado? 
- Gostaria de poder interagir por mais tempo com o Lovable no dia a dia, além disso o lovable teve dificuldade em criar a IA de início no site que desenhei e em outros momentos senti que os créditos diários acabaram muito rapidamente
- 
- ### O que aprendeu sobre conversar com IAs?
- É possível e já viável realizar vibe coding de forma funcional e que gere bons produtos. É realmente um novo capítulo para a TI e o desenvolvimento de software
